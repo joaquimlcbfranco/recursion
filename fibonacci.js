@@ -14,11 +14,15 @@ function fibs(number, arr=[]) {
   return arr;
 }
 
-console.log(fibs(8));
+console.log(fibs(12));
 
 function fibsRec(number, arr=[0, 1], i = 2) {
   if (i === number) {
     return arr
   }
-  return 
+  const value = arr[i - 2] + arr[i - 1];
+  arr.push(value)
+  return fibsRec(number, arr, i + 1);
 }
+
+console.log(fibsRec(12));
